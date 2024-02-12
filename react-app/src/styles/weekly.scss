@@ -1,0 +1,259 @@
+$hsize : 30px;
+$HOUR_MARGIN_TOP : 15px;
+$bordercolor: solid thin lightblue;
+
+html{
+    background: RGB(36, 52, 94) ;
+
+}
+
+.maindiv{
+    color: lightgray  !important;
+    width: 95%;
+    margin: 15px;
+    min-width: 700px;
+
+}
+
+.wrapper{
+    //border: $bordercolor;
+    position: relative;
+}
+
+
+.horGrid {
+    display: grid;
+    grid-template-columns: $hsize repeat(1,1fr);
+    border-bottom: $bordercolor;
+}
+
+.dayGrid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+}
+
+.today{
+    background: #41d8bf;
+    color: #3b50b2;
+    .eventdiv{
+        background: #3b50b2;
+        color: #5fc9f3;
+    }
+
+}
+
+.verGrid {
+    display: grid;
+    grid-template-rows: repeat(24,1fr);
+    //border: $bordercolor;
+    &:first-child{
+        margin-top: $HOUR_MARGIN_TOP;
+    }
+}
+
+.days{
+    border: $bordercolor;
+    position: relative;
+}
+
+.hours{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    //border: $bordercolor;
+    border-top: $bordercolor;
+    border-left: $bordercolor;
+}
+
+.hourLine{
+    position: absolute;
+    border: 1px solid red;
+    width: 100%;
+}
+.eventdiv{
+    position: absolute;
+    width: calc(100% - 10px);
+    background: forestgreen;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    margin: 20px auto;
+
+    .stepButton{
+        background-color: #2e79ba;
+        font-size: x-large;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    .stepButton:hover {
+        background-color: #1d2124;
+    }
+
+    .stepButton:active {
+        background-color: #0a0c0d;
+    }
+
+    p {
+        margin: 0;
+        padding: 5px;
+        flex: 1 1 100%;
+        //color: black;
+    }
+}
+
+
+
+.addEventDiv {
+    background-color: #34495e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    margin-bottom: 10px;
+    color: darkgray;
+
+    input{
+        background-color: #2c3e50;
+        color: #ffffff;
+    }
+
+    .addEventLine, .addEventLineHidden {
+        margin-bottom: 10px;
+    }
+
+    label {
+        color: #ffffff;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .textinpline, .numinp, .textinparea {
+        width: calc(100% - 12px);
+        padding: 8px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #2c3e50;
+        color: #ffffff;
+    }
+
+    .checkinp {
+        margin-right: 5px;
+    }
+
+    .sb {
+        background-color: #e74c3c;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .sb:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+    .sb:hover {
+        background-color: #c0392b;
+    }
+}
+
+.eventDetailsDiv {
+    position: fixed;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 250px;
+    min-height: 200px;
+    max-height: 400px;
+    max-width: 400px;
+    z-index: 1;
+    color: lightgray;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    font-family: Arial, Roboto, sans-serif;
+
+    .detHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #34495e;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .headerspan{
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+
+    #closeButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+        float: right;
+        padding: 5px;
+        font-size: x-large;
+        font-weight: bold;
+        z-index: 1;
+
+    }
+
+    .detBody {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .detFooter {
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 1px solid #34495e;
+        text-align: right;
+    }
+
+    #delButton {
+        background-color: #e74c3c;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+        bottom: 0;
+
+    }
+
+    #delButton:hover {
+        background-color: #c0392b;
+    }
+}
+

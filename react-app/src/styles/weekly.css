@@ -1,0 +1,225 @@
+html {
+  background: RGB(36, 52, 94);
+}
+
+.maindiv {
+  color: lightgray !important;
+  width: 95%;
+  margin: 15px;
+  min-width: 700px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.horGrid {
+  display: grid;
+  grid-template-columns: 30px repeat(1, 1fr);
+  border-bottom: solid thin lightblue;
+}
+
+.dayGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+}
+
+.today {
+  background: #41d8bf;
+  color: #3b50b2;
+}
+.today .eventdiv {
+  background: #3b50b2;
+  color: #5fc9f3;
+}
+
+.verGrid {
+  display: grid;
+  grid-template-rows: repeat(24, 1fr);
+}
+.verGrid:first-child {
+  margin-top: 15px;
+}
+
+.days {
+  border: solid thin lightblue;
+  position: relative;
+}
+
+.hours {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-top: solid thin lightblue;
+  border-left: solid thin lightblue;
+}
+
+.hourLine {
+  position: absolute;
+  border: 1px solid red;
+  width: 100%;
+}
+
+.eventdiv {
+  position: absolute;
+  width: calc(100% - 10px);
+  background: forestgreen;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  margin: 20px auto;
+}
+.flexbox .stepButton {
+  background-color: #2e79ba;
+  font-size: x-large;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+.flexbox .stepButton:hover {
+  background-color: #1d2124;
+}
+.flexbox .stepButton:active {
+  background-color: #0a0c0d;
+}
+.flexbox p {
+  margin: 0;
+  padding: 5px;
+  flex: 1 1 100%;
+}
+
+.addEventDiv {
+  background-color: #34495e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 10px;
+  color: darkgray;
+}
+.addEventDiv input {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+.addEventDiv .addEventLine, .addEventDiv .addEventLineHidden {
+  margin-bottom: 10px;
+}
+.addEventDiv label {
+  color: #ffffff;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+.addEventDiv .textinpline, .addEventDiv .numinp, .addEventDiv .textinparea {
+  width: calc(100% - 12px);
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+.addEventDiv .checkinp {
+  margin-right: 5px;
+}
+.addEventDiv .sb {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.addEventDiv .sb:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.addEventDiv .sb:hover {
+  background-color: #c0392b;
+}
+
+.eventDetailsDiv {
+  position: fixed;
+  background-color: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  min-width: 250px;
+  min-height: 200px;
+  max-height: 400px;
+  max-width: 400px;
+  z-index: 1;
+  color: lightgray;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+  font-family: Arial, Roboto, sans-serif;
+}
+.eventDetailsDiv .detHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #34495e;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.eventDetailsDiv .headerspan {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.eventDetailsDiv #closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  float: right;
+  padding: 5px;
+  font-size: x-large;
+  font-weight: bold;
+  z-index: 1;
+}
+.eventDetailsDiv .detBody {
+  margin-bottom: 10px;
+  display: block;
+}
+.eventDetailsDiv .detFooter {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #34495e;
+  text-align: right;
+}
+.eventDetailsDiv #delButton {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  bottom: 0;
+}
+.eventDetailsDiv #delButton:hover {
+  background-color: #c0392b;
+}
+
+/*# sourceMappingURL=weekly.css.map */
